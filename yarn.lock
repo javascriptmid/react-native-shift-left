@@ -3199,6 +3199,14 @@ csv-parser@^1.6.0:
     minimist "^1.2.0"
     ndjson "^1.4.0"
 
+custom-env@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/custom-env/-/custom-env-1.0.1.tgz#222f859841ec9b82e0049a89edea349f6bcaa919"
+  integrity sha512-YHi7VLYBm08aJ3U7NJErfrW1kbMxc4+7guHdToeNlrrQLcDdEDI4tCGva3yhu9GM+BotLAf+6CPaH1MrbzADcg==
+  dependencies:
+    dotenv "*"
+    dotenv-expand "^5.0.0"
+
 damerau-levenshtein@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.5.tgz#780cf7144eb2e8dbd1c3bb83ae31100ccc31a414"
@@ -3406,6 +3414,16 @@ domexception@^1.0.1:
   integrity sha512-raigMkn7CJNNo6Ihro1fzG7wr3fHuYVytzquZKX5n0yizGsTcYgzdIUwj1X9pK0VvjeihV+XiclP+DjwbsSKug==
   dependencies:
     webidl-conversions "^4.0.2"
+
+dotenv-expand@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
+  integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
+
+dotenv@*, dotenv@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.0.0.tgz#ed310c165b4e8a97bb745b0a9d99c31bda566440"
+  integrity sha512-30xVGqjLjiUOArT4+M5q9sYdvuR4riM6yK9wMcas9Vbp6zZa+ocC9dp6QoftuhTPhFAiLK/0C5Ni2nou/Bk8lg==
 
 duplexer@~0.1.1:
   version "0.1.1"

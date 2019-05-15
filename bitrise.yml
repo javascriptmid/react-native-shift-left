@@ -1,0 +1,74 @@
+---
+format_version: '7'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: react-native
+trigger_map:
+- push_branch: master
+  workflow: deploy
+- pull_request_source_branch: "*"
+  workflow: primary
+  pull_request_target_branch: master
+workflows:
+  deploy:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4.0.14: {}
+    - script@1.1.5:
+        title: Do anything with Script step
+    - yarn:
+        inputs:
+        - command: install
+        title: Run yarn install
+    - install-missing-android-tools@2.3.5:
+        inputs:
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
+    - android-build@0.9.6:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+    - browserstack-upload: {}
+    - yarn:
+        inputs:
+        - command: e2e
+        title: Run yarn e2e
+    - deploy-to-bitrise-io@1.3.19: {}
+    envs:
+    - opts:
+        is_expand: false
+      BROWSERSTACK_DEVICE: Google Pixel
+  primary:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4.0.14: {}
+    - script@1.1.5:
+        title: Do anything with Script step
+    - yarn:
+        inputs:
+        - command: install
+        title: Run yarn install
+    - yarn:
+        title: Run yarn test
+        inputs:
+        - command: test
+    - deploy-to-bitrise-io@1.3.19: {}
+app:
+  envs:
+  - opts:
+      is_expand: false
+    PROJECT_LOCATION: android
+  - opts:
+      is_expand: false
+    MODULE: app
+  - opts:
+      is_expand: false
+    VARIANT: ''
+  - opts:
+      is_expand: false
+    BITRISE_PROJECT_PATH: ios/ShiftLeft.xcodeproj
+  - opts:
+      is_expand: false
+    BITRISE_SCHEME: ShiftLeft
+  - opts:
+      is_expand: false
+    BITRISE_EXPORT_METHOD: development

@@ -58,3 +58,5 @@ start.command
 
 # Jest coverage
 coverage/
+.env.*
+.env
