@@ -6,7 +6,7 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest --config jest.json"
   },
   "dependencies": {
     "react": "16.6.3",
@@ -35,9 +35,6 @@
     "minimist": "^1.2.0",
     "prettier": "1.17.1",
     "react-test-renderer": "16.6.3"
-  },
-  "jest": {
-    "preset": "react-native"
   },
   "license": "UNLICENSED",
   "husky": {
