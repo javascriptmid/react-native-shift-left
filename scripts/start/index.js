@@ -5,12 +5,14 @@ const args = minimist(process.argv.slice(2));
 const port = args.port || 8081;
 
 const isMacOs = process.platform === 'darwin';
+// eslint-disable-next-line no-unused-vars
 const isWindows = process.platform === 'win32';
-const isLinux = ['freebsd', 'linux', 'openbsd'].some(function (item) {
+const isLinux = ['freebsd', 'linux', 'openbsd'].some(function(item) {
   return item === process.platform;
 });
 
 if (isLinux) {
+  // eslint-disable-next-line no-undef
   console.log(colors.red('\nLinux is not supported yet.\n'));
   process.exit(1);
 }
@@ -30,7 +32,10 @@ execSync(`./node_modules/.bin/react-native run-android --port ${port}`, {
 });
 
 if (isMacOs) {
-  execSync(`./node_modules/.bin/react-native run-ios --simulator 'iPhone 8' --port ${port}`, {
-    stdio: 'inherit',
-  });
+  execSync(
+    `./node_modules/.bin/react-native run-ios --simulator 'iPhone 8' --port ${port}`,
+    {
+      stdio: 'inherit',
+    }
+  );
 }

@@ -1,6 +1,6 @@
 const compareVersions = require('compare-versions');
 
-module.exports = function (version, min, max) {
+module.exports = function(version, min, max) {
   if (min !== '*' && min !== undefined && compareVersions(version, min) < 0) {
     return false;
   }

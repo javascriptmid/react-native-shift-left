@@ -3,8 +3,9 @@ const colors = require('colors');
 const versionBetween = require('./versionBetween');
 
 const isMacOs = process.platform === 'darwin';
+// eslint-disable-next-line no-unused-vars
 const isWindows = process.platform === 'win32';
-const isLinux = ['freebsd', 'linux', 'openbsd'].some(function (item) {
+const isLinux = ['freebsd', 'linux', 'openbsd'].some(function(item) {
   return item === process.platform;
 });
 
@@ -17,16 +18,22 @@ if (isLinux) {
 const nodeVersion = process.version;
 
 if (!versionBetween(nodeVersion, '8.3.0')) {
-  console.log(colors.red(`\nThe node version should between 8.3.0 and *. Current version: ${nodeVersion}\n`));
+  console.log(
+    colors.red(
+      `\nThe node version should between 8.3.0 and *. Current version: ${nodeVersion}\n`
+    )
+  );
   process.exit(1);
 }
 
 // Check jdk version
 try {
-  const jdkVersionInfo = execSync('java -version 2>&1 | awk \'NR==1{print $3}\'')
+  const jdkVersionInfo = execSync("java -version 2>&1 | awk 'NR==1{print $3}'")
     .toString()
     .replace(/"/g, '');
-  const matches = jdkVersionInfo.match(/^1\.(\d+)(.\d+)?.*/) || jdkVersionInfo.match(/^(\d+)(.\d+)?(.\d+)?.*/);
+  const matches =
+    jdkVersionInfo.match(/^1\.(\d+)(.\d+)?.*/) ||
+    jdkVersionInfo.match(/^(\d+)(.\d+)?(.\d+)?.*/);
   let jdkVersion = '0';
 
   if (matches) {
@@ -34,30 +41,48 @@ try {
   }
 
   if (!versionBetween(jdkVersion, '8.0.0', '8.99.99')) {
-    console.log(colors.red(`\nThe jdk version should between 8.0.0 and 8.99.99. Current version: ${jdkVersionInfo}\n`));
+    console.log(
+      colors.red(
+        `\nThe jdk version should between 8.0.0 and 8.99.99. Current version: ${jdkVersionInfo}\n`
+      )
+    );
     process.exit(1);
   }
 } catch (e) {
   console.log(colors.red(e.message || e));
-  console.log([
-    '',
-    colors.yellow('If you didn\'t install jdk, Visit this site and download jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html'),
-    '',
-  ].join('\n'));
+  console.log(
+    [
+      '',
+      colors.yellow(
+        "If you didn't install jdk, Visit this site and download jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html"
+      ),
+      '',
+    ].join('\n')
+  );
   process.exit(1);
 }
 
 if (isMacOs) {
-  let xcodeVersion = execSync('xcodebuild -version 2>&1 | awk \'NR==1{print $2}\'').toString().replace(/\n/g, '');
+  let xcodeVersion = execSync(
+    "xcodebuild -version 2>&1 | awk 'NR==1{print $2}'"
+  )
+    .toString()
+    .replace(/\n/g, '');
   xcodeVersion = Number.parseFloat(xcodeVersion);
 
   if (Number.isNaN(xcodeVersion)) {
-    console.log(colors.red(`\nUnknown xcode version. Are you sure xcode is installed?\n`));
+    console.log(
+      colors.red(`\nUnknown xcode version. Are you sure xcode is installed?\n`)
+    );
     process.exit(1);
   }
 
   if (!versionBetween(String(xcodeVersion), '9.4.0', '*')) {
-    console.log(colors.red(`\nThe xcode version should between 9.4.0 and *. Current version: ${xcodeVersion}\n`));
+    console.log(
+      colors.red(
+        `\nThe xcode version should between 9.4.0 and *. Current version: ${xcodeVersion}\n`
+      )
+    );
     process.exit(1);
   }
 }
