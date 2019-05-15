@@ -1,11 +1,15 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import { HomeScreen } from './components';
+import { HomeScreen, TriviaScreen } from './components';
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Trivia: TriviaScreen,
   },
-});
+  {
+    headerMode: 'none',
+  }
+);
 
 export default createAppContainer(AppNavigator);
