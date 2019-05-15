@@ -3,10 +3,12 @@ import { View, SafeAreaView } from 'react-native';
 
 import styles from './styles';
 
-export default function Page({ children }) {
+export default function Page({ children, ...props }) {
   return (
     <SafeAreaView style={styles.Page}>
-      <View style={styles.Page}>{children}</View>
+      <View {...props} style={styles.Page}>
+        {children}
+      </View>
     </SafeAreaView>
   );
 }
