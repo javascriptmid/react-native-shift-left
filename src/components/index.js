@@ -1,6 +1,6 @@
 import HomeScreen from './HomeScreen';
-import Button from './Button';
 import Page from './Page';
 import TriviaScreen from './TriviaScreen';
+import TriviaResultScreen from './TriviaResultScreen';
 
-export { HomeScreen, Button, Page, TriviaScreen };
+export { HomeScreen, Page, TriviaScreen, TriviaResultScreen };
