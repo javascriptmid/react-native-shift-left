@@ -1,35 +1,33 @@
-## Initialize
-Everyone must run this script at first.
+# ShiftLeft demo (Simpsons trivia)
+
+## How to use
+
+Clone this repo
+
 ```bash
-node scripts/init
+git clone git@github.com:jerolan/react-native-shift-left-example.git
 ```
 
-## Coding
-We have prepared everything for you. You just need run script below:
+Install the dependencies
+
+```bash
+yarn
+```
+
+Run the local server
+
 ```bash
 yarn start
 ```
 
-## Build app
-Before build app, you should create signature for android
-```bash
-  sh scripts/build/android-signature.sh
-```
-Before build app, you should create personal certificate and upload to [apple developer](https://developer.apple.com/account/ios/certificate). Or create by xcode automatically.
-
-And then you can build
+Run the app
 
 ```bash
-sh scripts/build/archive.sh
+// iOS
+yarn ios
+
+// Android (need to have an emulator o device running/connected)
+yarn android
 ```
 
-## Upload to App Store
-You can use Xcode -> Product -> Archive, and click `Upload to App Store` when complete.
-
-Also, you can use shell script.
-
-```bash
-sh scripts/build/archive.sh && sh scripts/build/upload-app-store.sh
-```
-
-In this way, you should override teamID in file `ios/exportOptions/app-store.plist`, go to [apple developer](https://developer.apple.com/account/ios/identifier/bundle) to fetch the keyword named: Prefix
+![away-from-javascript](/screen.png)
