@@ -5,7 +5,7 @@ import styles from './styles';
 
 export default function Page({ children, ...props }) {
   return (
-    <SafeAreaView style={styles.Page}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View {...props} style={styles.Page}>
         {children}
       </View>
