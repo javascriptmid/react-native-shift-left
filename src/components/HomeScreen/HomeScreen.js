@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 import testProperties from '../../testProperties';
 
 import Page from '../Page';
-import Button from '../Button';
 
 import { TitleLogo } from './components';
 import styles from './styles';
@@ -15,18 +15,17 @@ export default function HomeScreen({ navigation }) {
   };
 
   return (
-    <View style={styles.Background}>
-      <Page {...testProperties('home-screen')}>
-        <View style={styles.Content}>
-          <TitleLogo />
+    <Page {...testProperties('home-screen')}>
+      <View style={styles.Content}>
+        <TitleLogo />
 
-          <Button
-            {...testProperties('start-playing-button')}
-            onPress={handleTriviaPlay}
-            title="START PLAYING"
-          />
-        </View>
-      </Page>
-    </View>
+        <Button
+          {...testProperties('start-playing-button')}
+          type="outline"
+          onPress={handleTriviaPlay}
+          title="START PLAYING"
+        />
+      </View>
+    </Page>
   );
 }

@@ -1,11 +1,11 @@
 import 'react-native';
 import React from 'react';
+import { Button } from 'react-native-elements';
 
 import HomeScreen from '../HomeScreen';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import Button from '../../Button';
 
 describe('<HomeScreen />', () => {
   it('renders correctly', () => {
