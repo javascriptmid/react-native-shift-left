@@ -9,7 +9,7 @@ import Page from '../Page';
 import { AnswerOptionList, AnswerResultTitle } from './components';
 import styles from './styles';
 
-export default function HomeScreen({ navigation }) {
+export default function TriviaScreen({ navigation }) {
   const [trivia, setTrivia] = useState();
   const [userScore, setUserScore] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState();
