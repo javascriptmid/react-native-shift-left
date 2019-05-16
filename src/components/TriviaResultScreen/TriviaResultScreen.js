@@ -21,7 +21,11 @@ export default function TriviaResultScreen({ navigation }) {
             : 'Eres tonto como una piedra y feo como una blasfemia'}
         </Text>
 
-        <Button title="VOLVER A COMENZAR" onPress={handleResetTrivia} />
+        <Button
+          {...testProperties('restart-trivia-button')}
+          title="VOLVER A COMENZAR"
+          onPress={handleResetTrivia}
+        />
       </View>
     </Page>
   );

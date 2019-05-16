@@ -15,7 +15,7 @@ const capabilities = {
   local_android: {
     platformName: 'Android',
     deviceName: 'Android Emulator',
-    app: 'android/app/build/outputs/apk/release/app-release.apk',
+    app: 'android/app/build/outputs/apk/debug/app-debug.apk',
   },
   remote_ios: {
     nativeWebTap: true,
