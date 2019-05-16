@@ -446,7 +446,6 @@
     ],
     "correctAnswer": 2
   },
-  ,
   {
     "_id": "1712e24b8ee6be621aa3f87a",
     "difficulty": 2,
@@ -867,7 +866,6 @@
     ],
     "correctAnswer": 3
   },
-  ,
   {
     "_id": "58ae6d45dad0d01f4aba9bcc",
     "difficulty": 3,
@@ -1381,7 +1379,6 @@
     ],
     "correctAnswer": 1
   },
-  ,
   {
     "_id": "77b8d5d89826a9a670ee8c7c",
     "difficulty": 4,
@@ -1886,7 +1883,6 @@
     ],
     "correctAnswer": 2
   },
-  ,
   {
     "_id": "54768257a3e7f589c68be9b1",
     "difficulty": 5,
