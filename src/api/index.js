@@ -1,5 +1,7 @@
 import questions from './source.json';
 
+export const LIMIT = 5;
+
 function* getTriviaQuestion(groupQuestions) {
   let index = 0;
 
@@ -10,6 +12,6 @@ function* getTriviaQuestion(groupQuestions) {
 }
 
 export default function getTrivia() {
-  const sample = Math.floor(Math.random() * (questions.length - 5) + 1);
-  return getTriviaQuestion(questions.slice(sample, sample + 5));
+  const sample = Math.floor(Math.random() * (questions.length - LIMIT) + 1);
+  return getTriviaQuestion(questions.slice(sample, sample + LIMIT));
 }

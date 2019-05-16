@@ -8,10 +8,6 @@ import HomeScreen from '../HomeScreen';
 import renderer from 'react-test-renderer';
 
 describe('<HomeScreen />', () => {
-  it('renders correctly', () => {
-    renderer.create(<HomeScreen />);
-  });
-
   it('starts trivia', () => {
     const navigation = {
       navigate: jest.fn(),
