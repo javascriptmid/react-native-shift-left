@@ -36,6 +36,12 @@ workflows:
     - opts:
         is_expand: false
       BROWSERSTACK_DEVICE: Google Pixel
+    - opts:
+        is_expand: false
+      E2E_DEVICE: remote_android
+    - opts:
+        is_expand: false
+      E2E_SERVER: remote
   primary:
     steps:
     - activate-ssh-key@4.0.3:
