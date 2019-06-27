@@ -6,7 +6,8 @@ const capabilities = {
     platformName: 'iOS',
     platformVersion: 12.2,
     deviceName: 'iPhone X',
-    app: 'ios/build/Build/Products/Debug-iphonesimulator/ShiftLeft.app',
+    app:
+      'ios/build/ShiftLeft/Build/Products/Debug-iphonesimulator/ShiftLeft.app',
     showXcodeLog: true,
     wdaLaunchTimeout: 9900000,
     wdaConnectionTimeout: 9900000,
