@@ -23,7 +23,7 @@
     "@babel/runtime": "^7.4.5",
     "@types/react": "^16.8.17",
     "@types/react-native": "^0.57.55",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "appium": "^1.13.0",
     "babel-eslint": "9.x",
     "babel-jest": "^24.8.0",
